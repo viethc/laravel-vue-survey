@@ -29,7 +29,6 @@ const store = createStore({
   },
   getters: {},
   actions: {
-
     register({commit}, user) {
       return axiosClient.post('/register', user)
         .then(({data}) => {
@@ -72,7 +71,6 @@ const store = createStore({
         commit('dashboardLoading', false)
         return error;
       })
-
     },
     getSurveys({ commit }, {url = null} = {}) {
       commit('setSurveysLoading', true)
@@ -112,7 +110,6 @@ const store = createStore({
         });
     },
     saveSurvey({ commit, dispatch }, survey) {
-
       delete survey.image_url;
 
       let response;
@@ -148,7 +145,6 @@ const store = createStore({
       state.user.data = {};
       sessionStorage.removeItem("TOKEN");
     },
-
     setUser: (state, user) => {
       state.user.data = user;
     },
